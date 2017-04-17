@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-uws/uws/uws.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-uws/node_modules/uws/uws.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-uws">npmtest-uws (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-uws/uws/uws.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-uws/node_modules/uws/uws.js</span></h1>
     <h2>
         
         Statements: <span class="metric">11.54% <small>(33 / 286)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-uws/uws/</a> » uws.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-uws/node_modules/uws/</a> &#187; uws.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -1328,16 +1330,16 @@ const EE_ERROR = 'Registering more than one listener to a WebSocket is not suppo
 &nbsp;
 function noop() {}
 &nbsp;
-<span class="fstat-no" title="function not covered">function abortConnection(socket, code, name) {</span>
-<span class="cstat-no" title="statement not covered">    socket.end('HTTP/1.1 ' + code + ' ' + name + '\r\n\r\n');</span>
+<span class="fstat-no" title="function not covered" >function abortConnection(socket, code, name) {</span>
+<span class="cstat-no" title="statement not covered" >    socket.end('HTTP/1.1 ' + code + ' ' + name + '\r\n\r\n');</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function emitConnection(ws) {</span>
-<span class="cstat-no" title="statement not covered">    this.emit('connection', ws);</span>
+<span class="fstat-no" title="function not covered" >function emitConnection(ws) {</span>
+<span class="cstat-no" title="statement not covered" >    this.emit('connection', ws);</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function onServerMessage(message, webSocket) {</span>
-<span class="cstat-no" title="statement not covered">    webSocket.internalOnMessage(message);</span>
+<span class="fstat-no" title="function not covered" >function onServerMessage(message, webSocket) {</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.internalOnMessage(message);</span>
 }
 &nbsp;
 const native = (() =&gt; {
@@ -1348,15 +1350,15 @@ const native = (() =&gt; {
             return require(`./uws_${process.platform}_${process.versions.modules}`);
         }
     } catch (e) {
-<span class="cstat-no" title="statement not covered">        const version = process.version.substring(1).split('.').map(<span class="fstat-no" title="function not covered">function(n) {</span></span>
-<span class="cstat-no" title="statement not covered">            return parseInt(n);</span>
+<span class="cstat-no" title="statement not covered" >        const version = process.version.substring(1).split('.').map(<span class="fstat-no" title="function not covered" >function(n) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return parseInt(n);</span>
         });
-<span class="cstat-no" title="statement not covered">        const lessThanSixFour = version[0] &lt; 6 || (version[0] === 6 &amp;&amp; version[1] &lt; 4);</span>
+<span class="cstat-no" title="statement not covered" >        const lessThanSixFour = version[0] &lt; 6 || (version[0] === 6 &amp;&amp; version[1] &lt; 4);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (process.platform === 'win32' &amp;&amp; lessThanSixFour) {</span>
-<span class="cstat-no" title="statement not covered">            throw new Error('µWebSockets requires Node.js 6.4.0 or greater on Windows.');</span>
+<span class="cstat-no" title="statement not covered" >        if (process.platform === 'win32' &amp;&amp; lessThanSixFour) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error('µWebSockets requires Node.js 6.4.0 or greater on Windows.');</span>
         } else {
-<span class="cstat-no" title="statement not covered">            throw new Error('Compilation of µWebSockets has failed and there is no pre-compiled binary ' +</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error('Compilation of µWebSockets has failed and there is no pre-compiled binary ' +</span>
             'available for your system. Please install a supported C++11 compiler and reinstall the module \'uws\'.');
         }
     }
@@ -1369,36 +1371,36 @@ var _upgradeReq = null;
 const clientGroup = native.client.group.create();
 &nbsp;
 native.client.group.onConnection(clientGroup, (external) =&gt; {
-<span class="cstat-no" title="statement not covered">    const webSocket = native.getUserData(external);</span>
-<span class="cstat-no" title="statement not covered">    webSocket.external = external;</span>
-<span class="cstat-no" title="statement not covered">    webSocket.internalOnOpen();</span>
+<span class="cstat-no" title="statement not covered" >    const webSocket = native.getUserData(external);</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.external = external;</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.internalOnOpen();</span>
 });
 &nbsp;
 native.client.group.onMessage(clientGroup, (message, webSocket) =&gt; {
-<span class="cstat-no" title="statement not covered">    webSocket.internalOnMessage(message);</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.internalOnMessage(message);</span>
 });
 &nbsp;
 native.client.group.onDisconnection(clientGroup, (external, code, message, webSocket) =&gt; {
-<span class="cstat-no" title="statement not covered">    webSocket.external = null;</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.external = null;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    process.nextTick(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">        webSocket.internalOnClose(code, message);</span>
+<span class="cstat-no" title="statement not covered" >    process.nextTick(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        webSocket.internalOnClose(code, message);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    native.clearUserData(external);</span>
+<span class="cstat-no" title="statement not covered" >    native.clearUserData(external);</span>
 });
 &nbsp;
 native.client.group.onPing(clientGroup, (message, webSocket) =&gt; {
-<span class="cstat-no" title="statement not covered">    webSocket.onping(message);</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.onping(message);</span>
 });
 &nbsp;
 native.client.group.onPong(clientGroup, (message, webSocket) =&gt; {
-<span class="cstat-no" title="statement not covered">    webSocket.onpong(message);</span>
+<span class="cstat-no" title="statement not covered" >    webSocket.onpong(message);</span>
 });
 &nbsp;
 native.client.group.onError(clientGroup, (webSocket) =&gt; {
-<span class="cstat-no" title="statement not covered">    process.nextTick(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">        webSocket.internalOnError({</span>
+<span class="cstat-no" title="statement not covered" >    process.nextTick(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        webSocket.internalOnError({</span>
             message: 'uWs client connection error',
             stack: 'uWs client connection error'
         });
@@ -1406,183 +1408,183 @@ native.client.group.onError(clientGroup, (webSocket) =&gt; {
 });
 &nbsp;
 class WebSocket {
-    constructor<span class="fstat-no" title="function not covered">(external) {</span>
-<span class="cstat-no" title="statement not covered">        this.external = external;</span>
-<span class="cstat-no" title="statement not covered">        this.internalOnMessage = noop;</span>
-<span class="cstat-no" title="statement not covered">        this.internalOnClose = noop;</span>
-<span class="cstat-no" title="statement not covered">        this.onping = noop;</span>
-<span class="cstat-no" title="statement not covered">        this.onpong = noop;</span>
+    constructor<span class="fstat-no" title="function not covered" >(external) {</span>
+<span class="cstat-no" title="statement not covered" >        this.external = external;</span>
+<span class="cstat-no" title="statement not covered" >        this.internalOnMessage = noop;</span>
+<span class="cstat-no" title="statement not covered" >        this.internalOnClose = noop;</span>
+<span class="cstat-no" title="statement not covered" >        this.onping = noop;</span>
+<span class="cstat-no" title="statement not covered" >        this.onpong = noop;</span>
     }
 &nbsp;
-    get upgradeReq<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        return _upgradeReq;</span>
+    get upgradeReq<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        return _upgradeReq;</span>
     }
 &nbsp;
-    set onmessage<span class="fstat-no" title="function not covered">(f) {</span>
-<span class="cstat-no" title="statement not covered">        if (f) {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage = (message) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                f({data: message});</span>
+    set onmessage<span class="fstat-no" title="function not covered" >(f) {</span>
+<span class="cstat-no" title="statement not covered" >        if (f) {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage = (message) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                f({data: message});</span>
             };
         } else {
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage = noop;</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage = noop;</span>
         }
     }
 &nbsp;
-    set onopen<span class="fstat-no" title="function not covered">(f) {</span>
-<span class="cstat-no" title="statement not covered">        if (f) {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnOpen = f;</span>
+    set onopen<span class="fstat-no" title="function not covered" >(f) {</span>
+<span class="cstat-no" title="statement not covered" >        if (f) {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnOpen = f;</span>
         } else {
-<span class="cstat-no" title="statement not covered">            this.internalOnOpen = noop;</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnOpen = noop;</span>
         }
     }
 &nbsp;
-    set onclose<span class="fstat-no" title="function not covered">(f) {</span>
-<span class="cstat-no" title="statement not covered">        if (f) {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnClose = (code, message) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                f({code: code, reason: message});</span>
+    set onclose<span class="fstat-no" title="function not covered" >(f) {</span>
+<span class="cstat-no" title="statement not covered" >        if (f) {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose = (code, message) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                f({code: code, reason: message});</span>
             };
         } else {
-<span class="cstat-no" title="statement not covered">            this.internalOnClose = noop;</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose = noop;</span>
         }
     }
 &nbsp;
-    set onerror<span class="fstat-no" title="function not covered">(f) {</span>
-<span class="cstat-no" title="statement not covered">        if (f &amp;&amp; this instanceof WebSocketClient) {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnError = f;</span>
+    set onerror<span class="fstat-no" title="function not covered" >(f) {</span>
+<span class="cstat-no" title="statement not covered" >        if (f &amp;&amp; this instanceof WebSocketClient) {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnError = f;</span>
         } else {
-<span class="cstat-no" title="statement not covered">            this.internalOnError = noop;</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnError = noop;</span>
         }
     }
 &nbsp;
-    emit<span class="fstat-no" title="function not covered">(eventName, arg1, arg2) {</span>
-<span class="cstat-no" title="statement not covered">        if (eventName === 'message') {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage(arg1);</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'close') {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnClose(arg1, arg2);</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'ping') {</span>
-<span class="cstat-no" title="statement not covered">            this.onping(arg1);</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'pong') {</span>
-<span class="cstat-no" title="statement not covered">            this.onpong(arg1);</span>
+    emit<span class="fstat-no" title="function not covered" >(eventName, arg1, arg2) {</span>
+<span class="cstat-no" title="statement not covered" >        if (eventName === 'message') {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage(arg1);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'close') {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose(arg1, arg2);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'ping') {</span>
+<span class="cstat-no" title="statement not covered" >            this.onping(arg1);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'pong') {</span>
+<span class="cstat-no" title="statement not covered" >            this.onpong(arg1);</span>
         }
-<span class="cstat-no" title="statement not covered">        return this;</span>
+<span class="cstat-no" title="statement not covered" >        return this;</span>
     }
 &nbsp;
-    on<span class="fstat-no" title="function not covered">(eventName, f) {</span>
-<span class="cstat-no" title="statement not covered">        if (eventName === 'message') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.internalOnMessage !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+    on<span class="fstat-no" title="function not covered" >(eventName, f) {</span>
+<span class="cstat-no" title="statement not covered" >        if (eventName === 'message') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.internalOnMessage !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage = f;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'close') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.internalOnClose !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage = f;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'close') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.internalOnClose !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.internalOnClose = f;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'ping') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.onping !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose = f;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'ping') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.onping !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.onping = f;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'pong') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.onpong !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+<span class="cstat-no" title="statement not covered" >            this.onping = f;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'pong') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.onpong !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.onpong = f;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'open') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.internalOnOpen !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+<span class="cstat-no" title="statement not covered" >            this.onpong = f;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'open') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.internalOnOpen !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.internalOnOpen = f;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'error' &amp;&amp; this instanceof WebSocketClient) {</span>
-<span class="cstat-no" title="statement not covered">            if (this.internalOnError !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnOpen = f;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'error' &amp;&amp; this instanceof WebSocketClient) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.internalOnError !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.internalOnError = f;</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnError = f;</span>
         }
-<span class="cstat-no" title="statement not covered">        return this;</span>
+<span class="cstat-no" title="statement not covered" >        return this;</span>
     }
 &nbsp;
-    once<span class="fstat-no" title="function not covered">(eventName, f) {</span>
-<span class="cstat-no" title="statement not covered">        if (eventName === 'message') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.internalOnMessage !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+    once<span class="fstat-no" title="function not covered" >(eventName, f) {</span>
+<span class="cstat-no" title="statement not covered" >        if (eventName === 'message') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.internalOnMessage !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage = (message) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                this.internalOnMessage = noop;</span>
-<span class="cstat-no" title="statement not covered">                f(message);</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage = (message) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.internalOnMessage = noop;</span>
+<span class="cstat-no" title="statement not covered" >                f(message);</span>
             };
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'close') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.internalOnClose !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'close') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.internalOnClose !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.internalOnClose = (code, message) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                this.internalOnClose = noop;</span>
-<span class="cstat-no" title="statement not covered">                f(code, message);</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose = (code, message) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.internalOnClose = noop;</span>
+<span class="cstat-no" title="statement not covered" >                f(code, message);</span>
             };
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'ping') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.onping !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'ping') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.onping !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.onping = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                this.onping = noop;</span>
-<span class="cstat-no" title="statement not covered">                f();</span>
+<span class="cstat-no" title="statement not covered" >            this.onping = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.onping = noop;</span>
+<span class="cstat-no" title="statement not covered" >                f();</span>
             };
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'pong') {</span>
-<span class="cstat-no" title="statement not covered">            if (this.onpong !== noop) {</span>
-<span class="cstat-no" title="statement not covered">                throw Error(EE_ERROR);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'pong') {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.onpong !== noop) {</span>
+<span class="cstat-no" title="statement not covered" >                throw Error(EE_ERROR);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.onpong = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                this.onpong = noop;</span>
-<span class="cstat-no" title="statement not covered">                f();</span>
+<span class="cstat-no" title="statement not covered" >            this.onpong = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                this.onpong = noop;</span>
+<span class="cstat-no" title="statement not covered" >                f();</span>
             };
         }
-<span class="cstat-no" title="statement not covered">        return this;</span>
+<span class="cstat-no" title="statement not covered" >        return this;</span>
     }
 &nbsp;
-    removeAllListeners<span class="fstat-no" title="function not covered">(eventName) {</span>
-<span class="cstat-no" title="statement not covered">        if (!eventName || eventName === 'message') {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage = noop;</span>
+    removeAllListeners<span class="fstat-no" title="function not covered" >(eventName) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!eventName || eventName === 'message') {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage = noop;</span>
         }
-<span class="cstat-no" title="statement not covered">        if (!eventName || eventName === 'close') {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnClose = noop;</span>
+<span class="cstat-no" title="statement not covered" >        if (!eventName || eventName === 'close') {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose = noop;</span>
         }
-<span class="cstat-no" title="statement not covered">        if (!eventName || eventName === 'ping') {</span>
-<span class="cstat-no" title="statement not covered">            this.onping = noop;</span>
+<span class="cstat-no" title="statement not covered" >        if (!eventName || eventName === 'ping') {</span>
+<span class="cstat-no" title="statement not covered" >            this.onping = noop;</span>
         }
-<span class="cstat-no" title="statement not covered">        if (!eventName || eventName === 'pong') {</span>
-<span class="cstat-no" title="statement not covered">            this.onpong = noop;</span>
+<span class="cstat-no" title="statement not covered" >        if (!eventName || eventName === 'pong') {</span>
+<span class="cstat-no" title="statement not covered" >            this.onpong = noop;</span>
         }
-<span class="cstat-no" title="statement not covered">        return this;</span>
+<span class="cstat-no" title="statement not covered" >        return this;</span>
     }
 &nbsp;
-    removeListener<span class="fstat-no" title="function not covered">(eventName, cb) {</span>
-<span class="cstat-no" title="statement not covered">        if (eventName === 'message' &amp;&amp; this.internalOnMessage === cb) {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnMessage = noop;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'close' &amp;&amp; this.internalOnClose === cb) {</span>
-<span class="cstat-no" title="statement not covered">            this.internalOnClose = noop;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'ping' &amp;&amp; this.onping === cb) {</span>
-<span class="cstat-no" title="statement not covered">            this.onping = noop;</span>
-        } else <span class="cstat-no" title="statement not covered">if (eventName === 'pong' &amp;&amp; this.onpong === cb) {</span>
-<span class="cstat-no" title="statement not covered">            this.onpong = noop;</span>
+    removeListener<span class="fstat-no" title="function not covered" >(eventName, cb) {</span>
+<span class="cstat-no" title="statement not covered" >        if (eventName === 'message' &amp;&amp; this.internalOnMessage === cb) {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnMessage = noop;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'close' &amp;&amp; this.internalOnClose === cb) {</span>
+<span class="cstat-no" title="statement not covered" >            this.internalOnClose = noop;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'ping' &amp;&amp; this.onping === cb) {</span>
+<span class="cstat-no" title="statement not covered" >            this.onping = noop;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (eventName === 'pong' &amp;&amp; this.onpong === cb) {</span>
+<span class="cstat-no" title="statement not covered" >            this.onpong = noop;</span>
         }
-<span class="cstat-no" title="statement not covered">        return this;</span>
+<span class="cstat-no" title="statement not covered" >        return this;</span>
     }
 &nbsp;
-    get OPEN<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        return WebSocketClient.OPEN;</span>
+    get OPEN<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        return WebSocketClient.OPEN;</span>
     }
 &nbsp;
-    get CLOSED<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        return WebSocketClient.CLOSED;</span>
+    get CLOSED<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        return WebSocketClient.CLOSED;</span>
     }
 &nbsp;
-    get readyState<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        return this.external ? WebSocketClient.OPEN : WebSocketClient.CLOSED;</span>
+    get readyState<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.external ? WebSocketClient.OPEN : WebSocketClient.CLOSED;</span>
     }
 &nbsp;
-    get _socket<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        const address = this.external ? native.getAddress(this.external) : new Array(3);</span>
-<span class="cstat-no" title="statement not covered">        return {</span>
+    get _socket<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        const address = this.external ? native.getAddress(this.external) : new Array(3);</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
             remotePort: address[0],
             remoteAddress: address[1],
             remoteFamily: address[2]
@@ -1591,271 +1593,271 @@ class WebSocket {
 &nbsp;
     // from here down, functions are not common between client and server
 &nbsp;
-    ping<span class="fstat-no" title="function not covered">(message, options, dontFailWhenClosed) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            native.server.send(this.external, message, WebSocketClient.OPCODE_PING);</span>
+    ping<span class="fstat-no" title="function not covered" >(message, options, dontFailWhenClosed) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            native.server.send(this.external, message, WebSocketClient.OPCODE_PING);</span>
         }
     }
 &nbsp;
-    terminate<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            native.server.terminate(this.external);</span>
-<span class="cstat-no" title="statement not covered">            this.external = null;</span>
+    terminate<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            native.server.terminate(this.external);</span>
+<span class="cstat-no" title="statement not covered" >            this.external = null;</span>
         }
     }
 &nbsp;
-    send<span class="fstat-no" title="function not covered">(message, options, cb) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            if (typeof options === 'function') {</span>
-<span class="cstat-no" title="statement not covered">                cb = options;</span>
-<span class="cstat-no" title="statement not covered">                options = null;</span>
+    send<span class="fstat-no" title="function not covered" >(message, options, cb) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >                cb = options;</span>
+<span class="cstat-no" title="statement not covered" >                options = null;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            const binary = options &amp;&amp; options.binary || typeof message !== 'string';</span>
+<span class="cstat-no" title="statement not covered" >            const binary = options &amp;&amp; options.binary || typeof message !== 'string';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            native.server.send(this.external, message, binary ? WebSocketClient.OPCODE_BINARY : WebSocketClient.OPCODE_TEXT, cb ? (() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                process.nextTick(cb);</span>
+<span class="cstat-no" title="statement not covered" >            native.server.send(this.external, message, binary ? WebSocketClient.OPCODE_BINARY : WebSocketClient.OPCODE_TEXT, cb ? (() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                process.nextTick(cb);</span>
             }) : undefined);
-        } else <span class="cstat-no" title="statement not covered">if (cb) {</span>
-<span class="cstat-no" title="statement not covered">            cb(new Error('not opened'));</span>
+        } else <span class="cstat-no" title="statement not covered" >if (cb) {</span>
+<span class="cstat-no" title="statement not covered" >            cb(new Error('not opened'));</span>
         }
     }
 &nbsp;
-    close<span class="fstat-no" title="function not covered">(code, data) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            native.server.close(this.external, code, data);</span>
-<span class="cstat-no" title="statement not covered">            this.external = null;</span>
+    close<span class="fstat-no" title="function not covered" >(code, data) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            native.server.close(this.external, code, data);</span>
+<span class="cstat-no" title="statement not covered" >            this.external = null;</span>
         }
     }
 }
 &nbsp;
 class WebSocketClient extends WebSocket {
-    constructor<span class="fstat-no" title="function not covered">(uri) {</span>
-<span class="cstat-no" title="statement not covered">        super(null);</span>
-<span class="cstat-no" title="statement not covered">        this.internalOnOpen = noop;</span>
-<span class="cstat-no" title="statement not covered">        this.internalOnError = noop;</span>
-<span class="cstat-no" title="statement not covered">        native.connect(clientGroup, uri, this);</span>
+    constructor<span class="fstat-no" title="function not covered" >(uri) {</span>
+<span class="cstat-no" title="statement not covered" >        super(null);</span>
+<span class="cstat-no" title="statement not covered" >        this.internalOnOpen = noop;</span>
+<span class="cstat-no" title="statement not covered" >        this.internalOnError = noop;</span>
+<span class="cstat-no" title="statement not covered" >        native.connect(clientGroup, uri, this);</span>
     }
 &nbsp;
-    ping<span class="fstat-no" title="function not covered">(message, options, dontFailWhenClosed) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            native.client.send(this.external, message, WebSocketClient.OPCODE_PING);</span>
+    ping<span class="fstat-no" title="function not covered" >(message, options, dontFailWhenClosed) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            native.client.send(this.external, message, WebSocketClient.OPCODE_PING);</span>
         }
     }
 &nbsp;
-    terminate<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            native.client.terminate(this.external);</span>
-<span class="cstat-no" title="statement not covered">            this.external = null;</span>
+    terminate<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            native.client.terminate(this.external);</span>
+<span class="cstat-no" title="statement not covered" >            this.external = null;</span>
         }
     }
 &nbsp;
-    send<span class="fstat-no" title="function not covered">(message, options, cb) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            if (typeof options === 'function') {</span>
-<span class="cstat-no" title="statement not covered">                cb = options;</span>
-<span class="cstat-no" title="statement not covered">                options = null;</span>
+    send<span class="fstat-no" title="function not covered" >(message, options, cb) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            if (typeof options === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >                cb = options;</span>
+<span class="cstat-no" title="statement not covered" >                options = null;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            const binary = options &amp;&amp; options.binary || typeof message !== 'string';</span>
+<span class="cstat-no" title="statement not covered" >            const binary = options &amp;&amp; options.binary || typeof message !== 'string';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            native.client.send(this.external, message, binary ? WebSocketClient.OPCODE_BINARY : WebSocketClient.OPCODE_TEXT, cb ? (() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                process.nextTick(cb);</span>
+<span class="cstat-no" title="statement not covered" >            native.client.send(this.external, message, binary ? WebSocketClient.OPCODE_BINARY : WebSocketClient.OPCODE_TEXT, cb ? (() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                process.nextTick(cb);</span>
             }) : undefined);
-        } else <span class="cstat-no" title="statement not covered">if (cb) {</span>
-<span class="cstat-no" title="statement not covered">            cb(new Error('not opened'));</span>
+        } else <span class="cstat-no" title="statement not covered" >if (cb) {</span>
+<span class="cstat-no" title="statement not covered" >            cb(new Error('not opened'));</span>
         }
     }
 &nbsp;
-    close<span class="fstat-no" title="function not covered">(code, data) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.external) {</span>
-<span class="cstat-no" title="statement not covered">            native.client.close(this.external, code, data);</span>
-<span class="cstat-no" title="statement not covered">            this.external = null;</span>
+    close<span class="fstat-no" title="function not covered" >(code, data) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.external) {</span>
+<span class="cstat-no" title="statement not covered" >            native.client.close(this.external, code, data);</span>
+<span class="cstat-no" title="statement not covered" >            this.external = null;</span>
         }
     }
 }
 &nbsp;
 class Server extends EventEmitter {
-    constructor<span class="fstat-no" title="function not covered">(options, callback) {</span>
-<span class="cstat-no" title="statement not covered">        super();</span>
+    constructor<span class="fstat-no" title="function not covered" >(options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >        super();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (!options) {</span>
-<span class="cstat-no" title="statement not covered">            throw new TypeError('missing options');</span>
+<span class="cstat-no" title="statement not covered" >        if (!options) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new TypeError('missing options');</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (options.port === undefined &amp;&amp; !options.server &amp;&amp; !options.noServer) {</span>
-<span class="cstat-no" title="statement not covered">            throw new TypeError('invalid options');</span>
+<span class="cstat-no" title="statement not covered" >        if (options.port === undefined &amp;&amp; !options.server &amp;&amp; !options.noServer) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new TypeError('invalid options');</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var nativeOptions = WebSocketClient.PERMESSAGE_DEFLATE;</span>
+<span class="cstat-no" title="statement not covered" >        var nativeOptions = WebSocketClient.PERMESSAGE_DEFLATE;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (options.perMessageDeflate !== undefined) {</span>
-<span class="cstat-no" title="statement not covered">            if (options.perMessageDeflate === false) {</span>
-<span class="cstat-no" title="statement not covered">                nativeOptions = 0;</span>
+<span class="cstat-no" title="statement not covered" >        if (options.perMessageDeflate !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            if (options.perMessageDeflate === false) {</span>
+<span class="cstat-no" title="statement not covered" >                nativeOptions = 0;</span>
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        this.serverGroup = native.server.group.create(nativeOptions, options.maxPayload === undefined ? 1048576 : options.maxPayload);</span>
+<span class="cstat-no" title="statement not covered" >        this.serverGroup = native.server.group.create(nativeOptions, options.maxPayload === undefined ? 1048576 : options.maxPayload);</span>
 &nbsp;
         // can these be made private?
-<span class="cstat-no" title="statement not covered">        this._upgradeCallback = noop;</span>
-<span class="cstat-no" title="statement not covered">        this._upgradeListener = null;</span>
-<span class="cstat-no" title="statement not covered">        this._noDelay = options.noDelay === undefined ? true : options.noDelay;</span>
-<span class="cstat-no" title="statement not covered">        this._lastUpgradeListener = true;</span>
-<span class="cstat-no" title="statement not covered">        this._passedHttpServer = options.server;</span>
+<span class="cstat-no" title="statement not covered" >        this._upgradeCallback = noop;</span>
+<span class="cstat-no" title="statement not covered" >        this._upgradeListener = null;</span>
+<span class="cstat-no" title="statement not covered" >        this._noDelay = options.noDelay === undefined ? true : options.noDelay;</span>
+<span class="cstat-no" title="statement not covered" >        this._lastUpgradeListener = true;</span>
+<span class="cstat-no" title="statement not covered" >        this._passedHttpServer = options.server;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (!options.noServer) {</span>
-<span class="cstat-no" title="statement not covered">            this.httpServer = options.server ? options.server : http.createServer((request, response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (!options.noServer) {</span>
+<span class="cstat-no" title="statement not covered" >            this.httpServer = options.server ? options.server : http.createServer((request, response) =&gt; {</span>
                 // todo: default HTTP response
-<span class="cstat-no" title="statement not covered">                response.end();</span>
+<span class="cstat-no" title="statement not covered" >                response.end();</span>
             });
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (options.path &amp;&amp; (!options.path.length || options.path[0] !== '/')) {</span>
-<span class="cstat-no" title="statement not covered">                options.path = '/' + options.path;</span>
+<span class="cstat-no" title="statement not covered" >            if (options.path &amp;&amp; (!options.path.length || options.path[0] !== '/')) {</span>
+<span class="cstat-no" title="statement not covered" >                options.path = '/' + options.path;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            this.httpServer.on('upgrade', this._upgradeListener = ((request, socket, head) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                if (!options.path || options.path == request.url.split('?')[0].split('#')[0]) {</span>
-<span class="cstat-no" title="statement not covered">                    if (options.verifyClient) {</span>
-<span class="cstat-no" title="statement not covered">                        const info = {</span>
+<span class="cstat-no" title="statement not covered" >            this.httpServer.on('upgrade', this._upgradeListener = ((request, socket, head) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (!options.path || options.path == request.url.split('?')[0].split('#')[0]) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (options.verifyClient) {</span>
+<span class="cstat-no" title="statement not covered" >                        const info = {</span>
                             origin: request.headers.origin,
                             secure: request.connection.authorized !== undefined || request.connection.encrypted !== undefined,
                             req: request
                         };
 &nbsp;
-<span class="cstat-no" title="statement not covered">                        if (options.verifyClient.length === 2) {</span>
-<span class="cstat-no" title="statement not covered">                            options.verifyClient(info, (result, code, name) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                                if (result) {</span>
-<span class="cstat-no" title="statement not covered">                                    this.handleUpgrade(request, socket, head, emitConnection);</span>
+<span class="cstat-no" title="statement not covered" >                        if (options.verifyClient.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >                            options.verifyClient(info, (result, code, name) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                if (result) {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.handleUpgrade(request, socket, head, emitConnection);</span>
                                 } else {
-<span class="cstat-no" title="statement not covered">                                    abortConnection(socket, code, name);</span>
+<span class="cstat-no" title="statement not covered" >                                    abortConnection(socket, code, name);</span>
                                 }
                             });
                         } else {
-<span class="cstat-no" title="statement not covered">                            if (options.verifyClient(info)) {</span>
-<span class="cstat-no" title="statement not covered">                                this.handleUpgrade(request, socket, head, emitConnection);</span>
+<span class="cstat-no" title="statement not covered" >                            if (options.verifyClient(info)) {</span>
+<span class="cstat-no" title="statement not covered" >                                this.handleUpgrade(request, socket, head, emitConnection);</span>
                             } else {
-<span class="cstat-no" title="statement not covered">                                abortConnection(socket, 400, 'Client verification failed');</span>
+<span class="cstat-no" title="statement not covered" >                                abortConnection(socket, 400, 'Client verification failed');</span>
                             }
                         }
                     } else {
-<span class="cstat-no" title="statement not covered">                        this.handleUpgrade(request, socket, head, emitConnection);</span>
+<span class="cstat-no" title="statement not covered" >                        this.handleUpgrade(request, socket, head, emitConnection);</span>
                     }
                 } else {
-<span class="cstat-no" title="statement not covered">                    if (this._lastUpgradeListener) {</span>
-<span class="cstat-no" title="statement not covered">                        abortConnection(socket, 400, 'URL not supported');</span>
+<span class="cstat-no" title="statement not covered" >                    if (this._lastUpgradeListener) {</span>
+<span class="cstat-no" title="statement not covered" >                        abortConnection(socket, 400, 'URL not supported');</span>
                     }
                 }
             }));
 &nbsp;
-<span class="cstat-no" title="statement not covered">            this.httpServer.on('newListener', (eventName, listener) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                if (eventName === 'upgrade') {</span>
-<span class="cstat-no" title="statement not covered">                    this._lastUpgradeListener = false;</span>
+<span class="cstat-no" title="statement not covered" >            this.httpServer.on('newListener', (eventName, listener) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (eventName === 'upgrade') {</span>
+<span class="cstat-no" title="statement not covered" >                    this._lastUpgradeListener = false;</span>
                 }
             });
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        native.server.group.onDisconnection(this.serverGroup, (external, code, message, webSocket) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">            webSocket.external = null;</span>
+<span class="cstat-no" title="statement not covered" >        native.server.group.onDisconnection(this.serverGroup, (external, code, message, webSocket) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            webSocket.external = null;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            process.nextTick(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                webSocket.internalOnClose(code, message);</span>
+<span class="cstat-no" title="statement not covered" >            process.nextTick(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                webSocket.internalOnClose(code, message);</span>
             });
 &nbsp;
-<span class="cstat-no" title="statement not covered">            native.clearUserData(external);</span>
+<span class="cstat-no" title="statement not covered" >            native.clearUserData(external);</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered">        native.server.group.onMessage(this.serverGroup, onServerMessage);</span>
+<span class="cstat-no" title="statement not covered" >        native.server.group.onMessage(this.serverGroup, onServerMessage);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        native.server.group.onPing(this.serverGroup, (message, webSocket) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">            webSocket.onping(message);</span>
+<span class="cstat-no" title="statement not covered" >        native.server.group.onPing(this.serverGroup, (message, webSocket) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            webSocket.onping(message);</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered">        native.server.group.onPong(this.serverGroup, (message, webSocket) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">            webSocket.onpong(message);</span>
+<span class="cstat-no" title="statement not covered" >        native.server.group.onPong(this.serverGroup, (message, webSocket) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            webSocket.onpong(message);</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered">        native.server.group.onConnection(this.serverGroup, (external) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">            const webSocket = new WebSocket(external);</span>
+<span class="cstat-no" title="statement not covered" >        native.server.group.onConnection(this.serverGroup, (external) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const webSocket = new WebSocket(external);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            native.setUserData(external, webSocket);</span>
-<span class="cstat-no" title="statement not covered">            this._upgradeCallback(webSocket);</span>
-<span class="cstat-no" title="statement not covered">            _upgradeReq = null;</span>
+<span class="cstat-no" title="statement not covered" >            native.setUserData(external, webSocket);</span>
+<span class="cstat-no" title="statement not covered" >            this._upgradeCallback(webSocket);</span>
+<span class="cstat-no" title="statement not covered" >            _upgradeReq = null;</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (options.port !== undefined) {</span>
-<span class="cstat-no" title="statement not covered">            if (options.host) {</span>
-<span class="cstat-no" title="statement not covered">                this.httpServer.listen(options.port, options.host, () =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                    this.emit('listening');</span>
-<span class="cstat-no" title="statement not covered">                    callback &amp;&amp; callback();</span>
+<span class="cstat-no" title="statement not covered" >        if (options.port !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            if (options.host) {</span>
+<span class="cstat-no" title="statement not covered" >                this.httpServer.listen(options.port, options.host, () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.emit('listening');</span>
+<span class="cstat-no" title="statement not covered" >                    callback &amp;&amp; callback();</span>
                 });
             } else {
-<span class="cstat-no" title="statement not covered">                this.httpServer.listen(options.port, () =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                    this.emit('listening');</span>
-<span class="cstat-no" title="statement not covered">                    callback &amp;&amp; callback();</span>
+<span class="cstat-no" title="statement not covered" >                this.httpServer.listen(options.port, () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    this.emit('listening');</span>
+<span class="cstat-no" title="statement not covered" >                    callback &amp;&amp; callback();</span>
                 });
             }
         }
     }
 &nbsp;
-    handleUpgrade<span class="fstat-no" title="function not covered">(request, socket, upgradeHead, callback) {</span>
-<span class="cstat-no" title="statement not covered">        if (socket._isNative) {</span>
-<span class="cstat-no" title="statement not covered">            if (this.serverGroup) {</span>
-<span class="cstat-no" title="statement not covered">                _upgradeReq = request;</span>
-<span class="cstat-no" title="statement not covered">                this._upgradeCallback = callback ? callback : noop;</span>
-<span class="cstat-no" title="statement not covered">                native.upgrade(this.serverGroup, socket.external, secKey, request.headers['sec-websocket-extensions'], request.headers['sec-websocket-protocol']);</span>
+    handleUpgrade<span class="fstat-no" title="function not covered" >(request, socket, upgradeHead, callback) {</span>
+<span class="cstat-no" title="statement not covered" >        if (socket._isNative) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.serverGroup) {</span>
+<span class="cstat-no" title="statement not covered" >                _upgradeReq = request;</span>
+<span class="cstat-no" title="statement not covered" >                this._upgradeCallback = callback ? callback : noop;</span>
+<span class="cstat-no" title="statement not covered" >                native.upgrade(this.serverGroup, socket.external, secKey, request.headers['sec-websocket-extensions'], request.headers['sec-websocket-protocol']);</span>
             }
         } else {
-<span class="cstat-no" title="statement not covered">            const secKey = request.headers['sec-websocket-key'];</span>
-<span class="cstat-no" title="statement not covered">            const socketHandle = socket.ssl ? socket._parent._handle : socket._handle;</span>
-<span class="cstat-no" title="statement not covered">            const sslState = socket.ssl ? socket.ssl._external : null;</span>
-<span class="cstat-no" title="statement not covered">            if (socketHandle &amp;&amp; secKey &amp;&amp; secKey.length == 24) {</span>
-<span class="cstat-no" title="statement not covered">                socket.setNoDelay(this._noDelay);</span>
-<span class="cstat-no" title="statement not covered">                const ticket = native.transfer(socketHandle.fd === -1 ? socketHandle : socketHandle.fd, sslState);</span>
-<span class="cstat-no" title="statement not covered">                socket.on('close', (error) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                    if (this.serverGroup) {</span>
-<span class="cstat-no" title="statement not covered">                        _upgradeReq = request;</span>
-<span class="cstat-no" title="statement not covered">                        this._upgradeCallback = callback ? callback : noop;</span>
-<span class="cstat-no" title="statement not covered">                        native.upgrade(this.serverGroup, ticket, secKey, request.headers['sec-websocket-extensions'], request.headers['sec-websocket-protocol']);</span>
+<span class="cstat-no" title="statement not covered" >            const secKey = request.headers['sec-websocket-key'];</span>
+<span class="cstat-no" title="statement not covered" >            const socketHandle = socket.ssl ? socket._parent._handle : socket._handle;</span>
+<span class="cstat-no" title="statement not covered" >            const sslState = socket.ssl ? socket.ssl._external : null;</span>
+<span class="cstat-no" title="statement not covered" >            if (socketHandle &amp;&amp; secKey &amp;&amp; secKey.length == 24) {</span>
+<span class="cstat-no" title="statement not covered" >                socket.setNoDelay(this._noDelay);</span>
+<span class="cstat-no" title="statement not covered" >                const ticket = native.transfer(socketHandle.fd === -1 ? socketHandle : socketHandle.fd, sslState);</span>
+<span class="cstat-no" title="statement not covered" >                socket.on('close', (error) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.serverGroup) {</span>
+<span class="cstat-no" title="statement not covered" >                        _upgradeReq = request;</span>
+<span class="cstat-no" title="statement not covered" >                        this._upgradeCallback = callback ? callback : noop;</span>
+<span class="cstat-no" title="statement not covered" >                        native.upgrade(this.serverGroup, ticket, secKey, request.headers['sec-websocket-extensions'], request.headers['sec-websocket-protocol']);</span>
                     }
                 });
             }
-<span class="cstat-no" title="statement not covered">            socket.destroy();</span>
+<span class="cstat-no" title="statement not covered" >            socket.destroy();</span>
         }
     }
 &nbsp;
-    broadcast<span class="fstat-no" title="function not covered">(message, options) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.serverGroup) {</span>
-<span class="cstat-no" title="statement not covered">            native.server.group.broadcast(this.serverGroup, message, options &amp;&amp; options.binary || false);</span>
+    broadcast<span class="fstat-no" title="function not covered" >(message, options) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.serverGroup) {</span>
+<span class="cstat-no" title="statement not covered" >            native.server.group.broadcast(this.serverGroup, message, options &amp;&amp; options.binary || false);</span>
         }
     }
 &nbsp;
-    startAutoPing<span class="fstat-no" title="function not covered">(interval, userMessage) {</span>
-<span class="cstat-no" title="statement not covered">        if (this.serverGroup) {</span>
-<span class="cstat-no" title="statement not covered">            native.server.group.startAutoPing(this.serverGroup, interval, userMessage);</span>
+    startAutoPing<span class="fstat-no" title="function not covered" >(interval, userMessage) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.serverGroup) {</span>
+<span class="cstat-no" title="statement not covered" >            native.server.group.startAutoPing(this.serverGroup, interval, userMessage);</span>
         }
     }
 &nbsp;
-    close<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        if (this._upgradeListener &amp;&amp; this.httpServer) {</span>
-<span class="cstat-no" title="statement not covered">            this.httpServer.removeListener('upgrade', this._upgradeListener);</span>
+    close<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this._upgradeListener &amp;&amp; this.httpServer) {</span>
+<span class="cstat-no" title="statement not covered" >            this.httpServer.removeListener('upgrade', this._upgradeListener);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (!this._passedHttpServer) {</span>
-<span class="cstat-no" title="statement not covered">                this.httpServer.close();</span>
+<span class="cstat-no" title="statement not covered" >            if (!this._passedHttpServer) {</span>
+<span class="cstat-no" title="statement not covered" >                this.httpServer.close();</span>
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (this.serverGroup) {</span>
-<span class="cstat-no" title="statement not covered">            native.server.group.close(this.serverGroup);</span>
-<span class="cstat-no" title="statement not covered">            this.serverGroup = null;</span>
+<span class="cstat-no" title="statement not covered" >        if (this.serverGroup) {</span>
+<span class="cstat-no" title="statement not covered" >            native.server.group.close(this.serverGroup);</span>
+<span class="cstat-no" title="statement not covered" >            this.serverGroup = null;</span>
         }
     }
 &nbsp;
-    get clients<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">        if (this.serverGroup) {</span>
-<span class="cstat-no" title="statement not covered">            return {</span>
+    get clients<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.serverGroup) {</span>
+<span class="cstat-no" title="statement not covered" >            return {</span>
                 length: native.server.group.getSize(this.serverGroup),
-                forEach: ((cb) =&gt; {<span class="cstat-no" title="statement not covered">native.server.group.forEach(this.serverGroup, cb)}</span>)
+                forEach: ((cb) =&gt; {<span class="cstat-no" title="statement not covered" >native.server.group.forEach(this.serverGroup, cb)}</span>)
             };
         }
     }
@@ -1875,11 +1877,10 @@ WebSocketClient.native = native;
 module.exports = WebSocketClient;
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 20:49:32 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 16:26:56 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
