@@ -1,4 +1,7 @@
-# test coverage for  [uws (v0.14.1)](https://github.com/uWebSockets/uWebSockets)  [![npm package](https://img.shields.io/npm/v/npmtest-uws.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-uws) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-uws.svg)](https://travis-ci.org/npmtest/node-npmtest-uws)
+# npmtest-uws
+
+#### basic test coverage for  [uws (v0.14.1)](https://github.com/uWebSockets/uWebSockets)  [![npm package](https://img.shields.io/npm/v/npmtest-uws.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-uws) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-uws.svg)](https://travis-ci.org/npmtest/node-npmtest-uws)
+
 #### Tiny WebSockets
 
 [![NPM](https://nodei.co/npm/uws.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/uws)
@@ -71,7 +74,8 @@
     "scripts": {
         "install": "node-gyp rebuild > build_log.txt 2>&1 || exit 0"
     },
-    "version": "0.14.1"
+    "version": "0.14.1",
+    "bin": {}
 }
 ```
 
